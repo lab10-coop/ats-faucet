@@ -1,0 +1,14 @@
+{
+  "network": {
+    "rpc": "http://rpc.tau1.artis.network"
+  },
+  "account": {
+    "address": "0x...",
+    "privateKey": "0x..."
+  },
+  "faucet": {
+    "amount": 1,
+    "interface": "::1",
+    "port": 8678
+  }
+}

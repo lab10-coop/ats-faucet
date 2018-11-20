@@ -1,14 +1,13 @@
 {
   "network": {
-    "rpc": "http://rpc.tau1.artis.network"
+    "rpc": "http://localhost:8545",
+    "interface": "::1",
+    "port": 8678
   },
   "account": {
     "address": "0x...",
     "privateKey": "0x..."
   },
-  "faucet": {
-    "amount": 1,
-    "interface": "::1",
-    "port": 8678
-  }
+  "amount": 1,
+  "gas": 40000
 }

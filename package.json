@@ -2,7 +2,7 @@
   "name": "ats-faucet",
   "version": "1.0.0",
   "description": "A simple faucet giving a bit of ATS to everybody asking for it",
-  "main": "faucet.js",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"

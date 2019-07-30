@@ -1,0 +1,11 @@
+Description=tau1 ats-faucet
+# TODO: set after rpc service 
+After=network.target
+[Service]
+User=faucet
+Group=faucet
+WorkingDirectory=/home/faucet/ats-faucet
+ExecStart=/usr/bin/npm start
+Restart=always
+[Install]
+WantedBy=multi-user.target

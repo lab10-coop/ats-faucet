@@ -1,10 +1,11 @@
-var http = require('http')
-var url = require('url')
-var Web3 = require('web3')
+const http = require('http');
+const url = require('url');
+const Web3 = require('web3');
+const mu = require('mu2');
 const config = require('./config');
 
 // globals
-var web3 = null;
+let web3 = null;
 
 // wrap the init stuff into async main in order to have await available
 async function start() {
@@ -50,8 +51,9 @@ function handleRequest(req, res) {
       }
     });
   } else {
-    res.writeHead(401, {'Content-Type': 'text/plain'});
-    res.end('Illegal request. Check if the address starts with 0x');
+    var stream = mu.compileAndRender('index.html', {});
+    stream.pipe(res);
+    //res.end('Please enter your address starting with 0x: <input type="text" />');
   }
 }
 

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Faucet</title>
+
+    <style>
+      html {
+        font-family: sans-serif;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Faucet</h1>
+
+    Please enter your address starting with 0x.
+    <form id="form" action=".">
+      <input id="address" type="text" name="address" placeholder="0x..." /><br />
+      <button type="submit">Claim</button>
+    </form>
+
+    <script>
+      const form = document.getElementById('form');
+      const addrInput = document.getElementById('address');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        location.replace(location.href + addrInput.value);
+      });
+    </script>
+  </body>
+</html>

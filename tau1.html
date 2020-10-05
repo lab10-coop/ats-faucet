@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>ATS Faucet</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://explorer.tau1.artis.network/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://explorer.tau1.artis.network/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://explorer.tau1.artis.network/images/favicon-16x16.png">
+    <link rel="shortcut icon" type='image/x-icon' href="https://explorer.tau1.artis.network/images/favicon.ico">
+
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700');
+      @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+      html {
+        font-family: sans-serif;
+        text-align: center;
+      }
+
+      body {
+        font-family: Nunito,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        margin: 0;
+        background-color: #fbfafc;
+      }
+
+      .logo {
+        text-align: left;
+        background-color: white;
+      }
+
+      .logo img {
+        height: 1.75rem;
+        width: auto;
+        padding: 0.8125rem 1rem;
+        display: block;
+      }
+
+      .headline {
+        background-color: #e97b9c;
+        background-image: linear-gradient(180deg,#e97b9c,#e97b9c);
+        box-shadow: 0 5px 40px -5px rgba(0,0,0,.25);
+      }
+
+      h1 {
+        display: inline-block;
+        color: white;
+        font-weight: 600;
+        margin: 2rem;
+      }
+
+      article {
+        padding: 2rem;
+        line-height: 2;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      input {
+        font-size: 1rem;
+        border-width: 1px;
+        border-color: lightgrey;
+        border-radius: 0.2rem;
+        padding: 0.3rem;
+      }
+
+      button {
+        border: 0;
+        background-color: #e97b9c;
+        color: white;
+        border-radius: 0.25rem;
+        padding: 0.5rem 1.5rem;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="https://explorer.tau1.artis.network/images/artis_tau_logo.svg" alt="ARTIS tau1 logo" />
+      </div>
+      <div class="headline">
+        <h1>Faucet</h1>
+      </div>
+    </header>
+
+    <article>
+      Enter your address starting with 0x.
+      <form id="form" action=".">
+        <input id="address" type="text" name="address" placeholder="0x..." /><br />
+        <button type="submit">Claim 1 tATS</button>
+      </form>
+    </article>
+
+    <script>
+      const form = document.getElementById('form');
+      const addrInput = document.getElementById('address');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        location.replace(location.href + addrInput.value);
+      });
+    </script>
+  </body>
+</html>

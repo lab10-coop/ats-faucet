@@ -30,7 +30,7 @@ function handleRequest(req, res) {
   var splitPath = url.parse(req.url).path.split('/');
   if(splitPath[1].startsWith('0x')) {
     var userAddr = splitPath[1];
-    if(! web3.utils.isAddress(userAddr)) {
+    if (!web3.utils.isAddress(userAddr)) {
       res.writeHead(401, {'Content-Type': 'text/plain'});
       res.end(`not a valid address: ${userAddr}\n`);
       return;
@@ -39,19 +39,19 @@ function handleRequest(req, res) {
     console.log(`processing for ${userAddr}`);
     refuelAccount(userAddr, (err, txHash) => {
       // this is an ugly workaround needed because web3 may throw an error after giving us a txHash
-      if(res.finished) return;
+      if (res.finished) return;
 
-      if(err) {
+      if (err) {
         res.writeHead(500, {'Content-Type': 'text/plain'});
         res.end(`${err}\n`);
       }
-      if(txHash) {
+      if (txHash) {
         res.writeHead(200, {'Content-Type': 'text/plain'});
         res.end(`txHash: ${txHash}\n`);
       }
     });
   } else {
-    var stream = mu.compileAndRender('index.html', { title: config.title, color: config.color });
+    var stream = mu.compileAndRender(config.indexHtml, {});
     stream.pipe(res);
     //res.end('Please enter your address starting with 0x: <input type="text" />');
   }

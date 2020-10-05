@@ -10,6 +10,5 @@
   },
   "amount": 1,
   "gas": 40000,
-  "color": "#e97b9c",
-  "title": "ATS Faucet"
+  "indexHtml": "tau1.html",
 }

@@ -4,23 +4,54 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Faucet</title>
+    <title>{{ title }}</title>
 
     <style>
       html {
         font-family: sans-serif;
         text-align: center;
       }
+
+      body {
+        margin: 0;
+      }
+
+      header {
+        text-align: left;
+        background-color: {{ color }};
+      }
+
+      .content {
+        max-width: 35rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      h1 {
+        display: inline-block;
+        color: white;
+      }
+
+      article {
+        padding: 2rem;
+        line-height: 2;
+      }
     </style>
   </head>
   <body>
-    <h1>Faucet</h1>
+    <header>
+      <div class="content">
+        <h1>{{ title }}</h1>
+      </div>
+    </header>
 
-    Please enter your address starting with 0x.
-    <form id="form" action=".">
-      <input id="address" type="text" name="address" placeholder="0x..." /><br />
-      <button type="submit">Claim</button>
-    </form>
+    <article>
+      Enter your address starting with 0x.
+      <form id="form" action=".">
+        <input id="address" type="text" name="address" placeholder="0x..." /><br />
+        <button type="submit">Claim</button>
+      </form>
+    </article>
 
     <script>
       const form = document.getElementById('form');

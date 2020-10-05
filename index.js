@@ -51,7 +51,7 @@ function handleRequest(req, res) {
       }
     });
   } else {
-    var stream = mu.compileAndRender('index.html', {});
+    var stream = mu.compileAndRender('index.html', { title: config.title, color: config.color });
     stream.pipe(res);
     //res.end('Please enter your address starting with 0x: <input type="text" />');
   }

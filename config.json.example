@@ -9,5 +9,7 @@
     "privateKey": "0x..."
   },
   "amount": 1,
-  "gas": 40000
+  "gas": 40000,
+  "color": "#e97b9c",
+  "title": "ATS Faucet"
 }

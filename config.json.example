@@ -10,5 +10,6 @@
   },
   "amount": 1,
   "gas": 40000,
-  "indexHtml": "tau1.html",
+  "gasPrice": 100000000000,
+  "indexHtml": "tau1.html"
 }
